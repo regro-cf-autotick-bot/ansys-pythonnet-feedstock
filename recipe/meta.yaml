@@ -1,5 +1,6 @@
 {% set name = "ansys-pythonnet" %}
 {% set version = "3.1.0rc8" %}
+{% set python_min = python_min | default("3.10") %}
 
 package:
   name: {{ name|lower }}
@@ -11,14 +12,15 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
+  noarch: python
 
 requirements:
   build:
     - dotnet-sdk 10.0.*
     - openssl
   host:
-    - python
+    - python {{ python_min }}
     - setuptools >=80
     - wheel
     - pip
@@ -26,7 +28,7 @@ requirements:
     - pyproject-parser >=0.14
   run:
     - clr_loader >=0.3.1,<0.4.0
-    - python
+    - python >={{ python_min }},<3.15
   run_constrained:
     - dotnet-runtime >=3.1
     - mono >=6.12  # [not win]
@@ -38,6 +40,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: .NET and Mono integration for Python (Ansys, Inc. fork)
