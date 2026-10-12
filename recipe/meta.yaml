@@ -1,5 +1,5 @@
 {% set name = "ansys-pythonnet" %}
-{% set version = "3.1.0rc8" %}
+{% set version = "3.2.0rc1" %}
 {% set python_min = python_min | default("3.10") %}
 
 package:
@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ansys_pythonnet-{{ version }}.tar.gz
-  sha256: cc0b73bcbbca77527ae7712e97dc17f442313a57c2e2e3f654111d31e99d5f98
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/ansys_pythonnet-{{ version }}.tar.gz
+  sha256: 4b8aa44638356ceb5d2ff6f060bf05bca77c15b8a77c2baf285fe0f2876d5a85
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
