@@ -42,31 +42,73 @@ conda config --add channels conda-forge/label/ansys-pythonnet_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/ansys-pythonnet_rc` channel has been enabled, `ansys-pythonnet` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install ansys-pythonnet
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install ansys-pythonnet
 ```
 
-It is possible to list all of the versions of `ansys-pythonnet` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add ansys-pythonnet
+# for installing globally
+pixi global install ansys-pythonnet
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `ansys-pythonnet` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search ansys-pythonnet --channel conda-forge/label/ansys-pythonnet_rc
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search ansys-pythonnet --channel conda-forge/label/ansys-pythonnet_rc
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search ansys-pythonnet --channel conda-forge/label/ansys-pythonnet_rc
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -78,6 +120,8 @@ mamba repoquery whoneeds ansys-pythonnet --channel conda-forge/label/ansys-pytho
 # List dependencies of `ansys-pythonnet`:
 mamba repoquery depends ansys-pythonnet --channel conda-forge/label/ansys-pythonnet_rc
 ```
+
+</details>
 
 
 About conda-forge
